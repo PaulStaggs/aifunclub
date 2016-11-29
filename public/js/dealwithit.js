@@ -8,7 +8,7 @@ if (getQueryVariable('link')) {
     $('#ontop').html('');
     $('#text').html('');
     scalar = 1;
-    $('form').replaceWith('<form action="http://aifunclub.azurewebsites.net/"><input type="submit" id="redirect" value="Wanna make another?"> <input type="button" id="twitter" value="Share on twitter">');
+    $('form').replaceWith('<form action="http://paul-azure-demo-app.azurewebsites.net/"><input type="submit" id="redirect" value="Wanna make another?"> <input type="button" id="twitter" value="Share on twitter">');
     origimgurl = getQueryVariable('link');
     socket.emit('origimgurl', origimgurl);
 }
@@ -36,7 +36,7 @@ function resizewait(){
 }
 
 $('body').on('click', "#twitter", function () {
-    window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent('Deal with it... ' + encodeURI('http://aifunclub.azurewebsites.net/index.html?link=') + encodeURI(origimgurl)) + '&hashtags=aifunclub');
+    window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent('Deal with it... ' + encodeURI('http://paul-azure-demo-app.azurewebsites.net/index.html?link=') + encodeURI(origimgurl)) + '&hashtags=aifunclub');
     console.log('Button pressed');
 });
 
@@ -71,7 +71,7 @@ function dealSuccess(response) {
                 imgMath(face);
             }
             history.pushState({}, "new url", "?link=" + origimgurl);
-            $('form').replaceWith('<form action="http://aifunclub.azurewebsites.net/"><input type="submit" id="redirect" value="Wanna make another?"> <input type="button" id="twitter" value="Share on twitter">');
+            $('form').replaceWith('<form action="http://paul-azure-demo-app.azurewebsites.net/"><input type="submit" id="redirect" value="Wanna make another?"> <input type="button" id="twitter" value="Share on twitter">');
         });
 }
 
